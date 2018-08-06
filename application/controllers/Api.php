@@ -27,7 +27,7 @@ class Api extends CI_Controller{
 		   
 		    if(strlen($filename)) $data['filename']=$filename;
 		    elseif (strlen($this->input->post('filename'))) $data['filename']=$this->input->post('filename');
-		    else $data['filename']='https://onaliternote.files.wordpress.com/2016/11/wp-1480230666843.jpg';
+		    else return FALSE;
 		   
 			$r = $this->picture_model->insert($data);
 			if($r!==FALSE) 
